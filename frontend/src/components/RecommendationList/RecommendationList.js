@@ -5,7 +5,7 @@ function RecommendationList({ recommendations }) {
   const whatsappLink = "https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20tirar%20dúvidas%20sobre%20os%20produtos%20recomendados.";
 
   return (
-    <div className="bg-[#FCF5E8] p-10 text-black flex justify-between">
+    <div className="bg-secondary p-10 text-black flex justify-between">
       <div className='w-full lg:max-w-[60%]'>
           <h2 className="text-3xl font-bold mb-4">Os produtos recomendados para você são:</h2>
           {recommendations.length === 0 && <p>Nenhuma recomendação encontrada.</p>}
@@ -17,7 +17,7 @@ function RecommendationList({ recommendations }) {
                   href={recommendation.url} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="text-[#075B6F] font-bold hover:underline cursor-pointer"
+                  className="text-primary font-bold hover:underline cursor-pointer"
                 >
                   {recommendation.name}
                 </a>
