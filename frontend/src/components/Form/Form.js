@@ -3,9 +3,9 @@
 import React from 'react';
 import { Preferences, Features, RecommendationType } from './Fields';
 import { SubmitButton } from './SubmitButton';
-import useProducts from '../../hooks/useProducts';
-import useForm from '../../hooks/useForm';
-import useRecommendations from '../../hooks/useRecommendations';
+import useProducts from '../../state/hooks/useProducts';
+import useForm from '../../state/hooks/useForm';
+import useRecommendations from '../../state/hooks/useRecommendations';
 
 function Form({ onUpdateRecommendations }) {
   const { preferences, features, products } = useProducts();
@@ -17,25 +17,12 @@ function Form({ onUpdateRecommendations }) {
 
   const { getRecommendations, setRecommendations } = useRecommendations(products);
 
-    const isFormValid = () => {
-      const hasRecommendationType = !!formData.selectedRecommendationType;
-
-      const hasSelections = 
-        formData.selectedPreferences.length > 0 || 
-        formData.selectedFeatures.length > 0;
-      
-      return hasRecommendationType && hasSelections;
-    };
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (isFormValid()) {
-      const dataRecommendations = getRecommendations(formData);
-      setRecommendations(dataRecommendations);
-      onUpdateRecommendations(dataRecommendations);
-    }
+    const dataRecommendations = getRecommendations(formData);
+    setRecommendations(dataRecommendations);
+    onUpdateRecommendations(dataRecommendations);
   };
 
   return (
@@ -62,7 +49,7 @@ function Form({ onUpdateRecommendations }) {
           handleChange('selectedRecommendationType', selected)
         }
       />
-      <SubmitButton text="Obter recomendação" disabled={!isFormValid()} />
+      <SubmitButton text="Obter recomendação" />
     </form>
   );
 }

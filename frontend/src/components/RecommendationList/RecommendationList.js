@@ -7,7 +7,7 @@ function RecommendationList({ recommendations }) {
   return (
     <div className="bg-[#FCF5E8] p-10 text-black flex justify-between">
       <div className='w-full lg:max-w-[60%]'>
-          <h2 className="text-2xl font-bold mb-4">Os produtos recomendados para você são:</h2>
+          <h2 className="text-3xl font-bold mb-4">Os produtos recomendados para você são:</h2>
           {recommendations.length === 0 && <p>Nenhuma recomendação encontrada.</p>}
 
           <ul>

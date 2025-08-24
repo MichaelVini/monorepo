@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="bg-[#075B6F] flex items-center justify-center min-h-screen">
       <div className="max-w-[1200px] flex flex-col justify-center items-center text-white p-6">
-        <h1 className="text-white font-bold text-3xl mb-6">
+        <h1 className="text-white font-bold text-4xl mb-6">
           Recomendador de Produtos RD Station
         </h1>
         <div className="bg-[#075B6F] w-full">
