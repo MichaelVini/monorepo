@@ -13,7 +13,8 @@
         "Gestão de leads e oportunidades",
         "Automação de fluxos de trabalho de vendas",
         "Rastreamento de interações com clientes"
-      ]
+      ],
+      "url": "https://www.rdstation.com/produtos/crm/"
     },
     {
       "id": 2,
@@ -28,7 +29,8 @@
         "Criação e gestão de campanhas de e-mail",
         "Rastreamento de comportamento do usuário",
         "Análise de retorno sobre investimento (ROI) de campanhas"
-      ]
+      ],
+      "url": "https://www.rdstation.com/produtos/marketing/"
     },
     {
       "id": 3,
@@ -43,7 +45,8 @@
         "Gestão de conversas em diferentes canais",
         "Chat ao vivo e mensagens automatizadas",
         "Integração com RD Station CRM e Marketing"
-      ]
+      ],
+      "url": "https://www.rdstation.com/produtos/conversas/"
     },
     {
       "id": 4,
@@ -58,7 +61,8 @@
         "Análise de dados para insights estratégicos",
         "Recomendação de ações com base em padrões",
         "Integração de funcionalidades preditivas nos produtos RD Station"
-      ]
+      ],
+      "url": "https://www.rdstation.com/produtos/mentor-ia/"
     }
   ]
 }
