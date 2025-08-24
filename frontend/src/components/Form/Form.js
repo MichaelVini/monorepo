@@ -1,13 +1,13 @@
 // Form.js
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Preferences, Features, RecommendationType } from './Fields';
 import { SubmitButton } from './SubmitButton';
 import useProducts from '../../hooks/useProducts';
 import useForm from '../../hooks/useForm';
 import useRecommendations from '../../hooks/useRecommendations';
 
-function Form() {
+function Form({ onUpdateRecommendations }) {
   const { preferences, features, products } = useProducts();
   const { formData, handleChange } = useForm({
     selectedPreferences: [],
@@ -15,40 +15,54 @@ function Form() {
     selectedRecommendationType: '',
   });
 
-  const { getRecommendations, recommendations } = useRecommendations(products);
+  const { getRecommendations, setRecommendations } = useRecommendations(products);
+
+    const isFormValid = () => {
+      const hasRecommendationType = !!formData.selectedRecommendationType;
+
+      const hasSelections = 
+        formData.selectedPreferences.length > 0 || 
+        formData.selectedFeatures.length > 0;
+      
+      return hasRecommendationType && hasSelections;
+    };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const dataRecommendations = getRecommendations(formData);
 
-    /**
-     * Defina aqui a lógica para atualizar as recomendações e passar para a lista de recomendações
-     */
+    if (isFormValid()) {
+      const dataRecommendations = getRecommendations(formData);
+      setRecommendations(dataRecommendations);
+      onUpdateRecommendations(dataRecommendations);
+    }
   };
 
   return (
     <form
-      className="max-w-md mx-auto p-4 bg-white rounded-lg shadow-md"
+      className="flex flex-col p-4 bg-[#027389] rounded-lg shadow-md"
       onSubmit={handleSubmit}
     >
-      <Preferences
-        preferences={preferences}
-        onPreferenceChange={(selected) =>
-          handleChange('selectedPreferences', selected)
-        }
-      />
-      <Features
-        features={features}
-        onFeatureChange={(selected) =>
-          handleChange('selectedFeatures', selected)
-        }
-      />
+      <div className="flex flex-col lg:flex-row lg:gap-28">
+        <Preferences
+          preferences={preferences}
+          onPreferenceChange={(selected) =>
+            handleChange('selectedPreferences', selected)
+          }
+        />
+        <Features
+          features={features}
+          onFeatureChange={(selected) =>
+            handleChange('selectedFeatures', selected)
+          }
+        />
+      </div>
       <RecommendationType
         onRecommendationTypeChange={(selected) =>
           handleChange('selectedRecommendationType', selected)
         }
       />
-      <SubmitButton text="Obter recomendação" />
+      <SubmitButton text="Obter recomendação" disabled={!isFormValid()} />
     </form>
   );
 }
