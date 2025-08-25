@@ -1,8 +1,5 @@
-import { countMatches, hasAtLeastOneMatch } from './helpers';
+import { countMatches, hasAtLeastOneMatch } from '../helpers/helpers';
 
-/*
-  Regras de negócio: filtros e cálculo de score.
-*/
 export function productMatchesFilters(product, selectedPreferences = [], selectedFeatures = []) {
   const preferencesOk = hasAtLeastOneMatch(product.preferences, selectedPreferences);
   const featuresOk = hasAtLeastOneMatch(product.features, selectedFeatures);

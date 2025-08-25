@@ -1,3 +1,1 @@
-import SubmitButton from './SubmitButton';
-
-export { SubmitButton }
+export { default } from './SubmitButton';

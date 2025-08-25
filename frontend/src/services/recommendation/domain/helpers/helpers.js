@@ -1,8 +1,4 @@
-import { normalizeStrings } from '../../../utils/stringHelpers';
-
-/*
-  Helpers específicos desse domínio (recommendation).
-*/
+import { normalizeStrings } from '../../../../utils/stringHelpers';
 
 export function countMatches(productItems = [], selectedItems = []) {
   if (selectedItems.length === 0) return 0;

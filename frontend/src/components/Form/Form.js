@@ -1,6 +1,6 @@
 import React from 'react';
-import { Preferences, Features, RecommendationType } from './Fields';
-import { SubmitButton } from './SubmitButton';
+import { Features, Preferences, RecommendationType } from './Fields';
+import SubmitButton from './SubmitButton';
 import useRecommendationForm from '../../state/hooks/useRecommendationForm';
 
 export function Form({ preferences = [], features = [], onChange, onSubmit }) {

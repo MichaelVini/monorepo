@@ -4,7 +4,7 @@ function BackButton({ onClick }) {
   return (
     <button 
       onClick={onClick}
-      className="btn-secondary uppercase"
+      className="btn-secondary mt-2 uppercase"
     >
       Voltar
     </button>

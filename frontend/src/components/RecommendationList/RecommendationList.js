@@ -1,11 +1,10 @@
 import React from 'react';
-import illustration from '../../ilustra.png';
 
 function RecommendationList({ recommendations }) {
   const whatsappLink = "https://wa.me/5511999999999?text=Olá,%20gostaria%20de%20tirar%20dúvidas%20sobre%20os%20produtos%20recomendados.";
 
   return (
-    <div className="bg-secondary p-10 text-black flex justify-between">
+    <div className="bg-secondary px-4 py-8 lg:p-10 text-black flex justify-between">
       <div className='w-full lg:max-w-[60%]'>
           <h2 className="text-3xl font-bold mb-4">Os produtos recomendados para você são:</h2>
           {recommendations.length === 0 && <p>Nenhuma recomendação encontrada.</p>}
@@ -38,7 +37,7 @@ function RecommendationList({ recommendations }) {
             Tirar dúvidas sobre os produtos recomendados
           </a>
         </div>
-        <img src={illustration} alt="Ilustração" className="mt-6 w-full max-w-[300px] mr-10 hidden lg:block" />
+        <img src="/ilustra.png" alt="Illustration" className="mt-6 w-full max-w-[300px] mr-10 hidden lg:block" />
       </div>
   );
 }

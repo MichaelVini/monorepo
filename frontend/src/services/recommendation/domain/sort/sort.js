@@ -1,4 +1,4 @@
-import { calculateRelevanceScore } from './rules';
+import { calculateRelevanceScore } from '../index';
 
 /*
   Critérios de ordenação e desempate.

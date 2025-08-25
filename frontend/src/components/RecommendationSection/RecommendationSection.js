@@ -1,6 +1,6 @@
 import React from 'react';
 import RecommendationList from '../RecommendationList/RecommendationList';
-import BackButton from './BackButton';
+import BackButton from '../shared/BackButton/BackButton';
 
 function RecommendationSection({ recommendations, onReset }) {
   return (

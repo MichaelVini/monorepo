@@ -1,12 +1,6 @@
-// getRecommendations.js
-
-/*
-  Orquestrador: responsável por juntar tudo - chama regras, helpers e retorna o resultado final.
-*/
-
 import { RECOMMENDATION_TYPE } from '../../constants/recomendationTypes';
-import { productMatchesFilters } from './domain/rules';
-import { sortByScoreDescendingLastWins } from './domain/sort';
+import { productMatchesFilters } from './domain';
+import { sortByScoreDescendingLastWins } from './domain';
 
 export function getRecommendations(formData, products = []) {
   const { selectedPreferences, selectedFeatures, selectedRecommendationType } = formData;
